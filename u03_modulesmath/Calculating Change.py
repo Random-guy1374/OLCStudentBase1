@@ -1,0 +1,5 @@
+change = float(input("Chnage : "))
+denomination = float(input("Denomination : "))
+notes = float(input("Notes : "))
+remain = change - (denomination * notes)
+print("Reminding : ",remain)
