@@ -1,0 +1,35 @@
+# colour_list = ['red','green', 'blue','orange', 'purple','yellow']
+# colour_to_find = input("Which colour would you like to search for? ")
+# items = len(colour_to_find)
+# item_number = 0
+# colour_found = False
+# while colour_found == True:
+#     while item_number > items:
+#         if colour_list[item_number] = colour_to_find
+#             print("There are " + str(item) + " colours in the list, " + colour_to_find + " is item " + str(iten_number - 1) + " in the list.")
+#             colour_found = True
+#             item_number = item_number
+#         elif item_number == items - 1:
+#             print("The colour is not in the list. ")
+#             colour_found = False
+#             item_number = items
+#         else:
+#             item_number = items
+
+colour_list = ['red','green', 'blue','orange', 'purple','yellow']
+colour_to_find = input("Which colour would you like to search for? ")
+items = len(colour_list) #1 colour_to_find to colour_list
+item_number = 0
+colour_found = False
+while colour_found == False: #2 True False
+    while item_number < items: #3. > to <
+        if colour_list[item_number] == colour_to_find: #4. add : #5. = to ==
+            print("There are " + str(items) + " colours in the list, " + colour_to_find + " is item " + str(item_number + 1) + " in the list.") #6.item to items #7 iten_number to item_number #8. - 1 to + 1
+            colour_found = True
+            item_number = items #9.item_number to items
+        elif item_number == items - 1:
+            print("The colour is not in the list. ")
+            colour_found = False
+            item_number = items 
+        else:
+            item_number += 1 #10. = to += #11 items to 1
