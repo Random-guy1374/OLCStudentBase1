@@ -26,10 +26,10 @@ while colour_found == False: #2 True to False
         if colour_list[item_number] == colour_to_find: #4. add : #5. = to ==
             print("There are " + str(items) + " colours in the list, " + colour_to_find + " is item " + str(item_number + 1) + " in the list.") #6.item to items #7 iten_number to item_number #8. - 1 to + 1
             colour_found = True
-            item_number = items #9.item_number to items
+            item_number = items #9.item_number = item_number to item_number = items
         elif item_number == items - 1:
             print("The colour is not in the list. ")
             colour_found = True #10. Flase to True
             item_number = items 
         else:
-            item_number += 1 #10. = items to += 1
+            item_number += 1 #11. = items to += 1
