@@ -77,14 +77,15 @@ print(students_mark)
 
 # Exercise 5: Length Check
 # Keep asking user for a username until it has at least 5 characters.
-while True:
-    username = input("Enter a username:")
-    if len(username) > 5:
-        break 
-    elif username == "" or username == " ":
-        username = input("Enter a username:")
-    else:
-        username = input("Enter a username:")
+
+
+# while True:
+#     username = input("Enter a username: ")
+#     if len(username) < 5:
+#         print("Invalid. Username must be 5 characters or more. ")
+#     else:
+#         break
+
 
 
 
@@ -93,6 +94,14 @@ while True:
 
 # Exercise 6: Numbers Only
 # Keep asking user to enter age until input contains digits only.
+
+
+# while True:
+#     age = input("Enter an age: ")
+#     if age.isdigit() != True:
+#         print("Invalid. Age contains digits only. ")
+#     else:
+#         break
 
 
 
@@ -104,6 +113,14 @@ while True:
 # Keep asking until user enters a code in uppercase letters only.
 
 
+# while True:
+#     text = input("Enter a code in uppercase letters only: ")
+#     if text.isupper() != True:
+#         print("Invalid. Code in uppercase letters only. ")
+#     else:
+#         break
+
+
 
 
 
@@ -113,6 +130,13 @@ while True:
 # Keep asking until user enters an email in lowercase only.
 
 
+# while True:
+#     email = input("Enter an email in lowercase only: ")
+#     if text.isupper() != True:
+#         print("Invalid. Email in lowercase only. ")
+#     else:
+#         break
+
 
 
 
@@ -121,6 +145,13 @@ while True:
 # Exercise 9: Password Validation
 # Keep asking until user enters a password with length >= 8.
 
+
+# while True:
+#     password = input("Enters a password with length more than or equal 8: ")
+#     if len(password) < 8:
+#         print("Invalid. Password too short. ")
+#     else:
+#         break
 
 
 
@@ -137,6 +168,26 @@ while True:
 # Hint: Use .strip() and validate all characters before returning.
 
 
+def get_valid_number(base):
+    while True:
+        if base.isdigit() != True:
+            base = input("Invalid. Parameter base must be a number.\nEnter a parameter base of 2 or 10 : ")
+        else:
+            break
+    while True:
+        number_base = []
+        for i in range(len(base)):
+            number_base.insert(-len(base),int(base[i]))
+        if 0 in number_base or 1 in number_base or base.isdigit() == True:
+            break
+        else:
+            base = input("Invalid. Parameter base binary or decimal.\nEnter a parameter base of 2 or 10 : ")
+    return base
+
+parameter = input("Enter a parameter base of 2 or 10 : ")
+result =  get_valid_number(parameter)
+print(parameter,"is valid")
+
 
 
 
@@ -150,6 +201,28 @@ while True:
 # Example: bin_to_den("11111011") should return 251.
 
 
+def bin_to_den(binstring):
+    while True:
+        if binstring.isdigit() != True:
+            binstring = input("Invalid. Enter a number in binary : ")
+        else:
+            break
+    total = 0
+    bina = []
+    length = len(binstring)
+    for i in range(length):
+        bina.insert(-length,int(binstring[i]))
+        # print("list",i,bina)
+    for j in range(length):
+        total += (2**(j))*(bina[j])
+        # print("toal",total)
+
+    return total
+
+num = input("Enter a number in binary : ")
+output = bin_to_den(num)
+print("denery :",output)
 
 
 # ----------------------------------------------------------------
+
