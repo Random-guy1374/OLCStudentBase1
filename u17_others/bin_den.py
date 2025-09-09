@@ -66,8 +66,8 @@ for i in range(len(numbers)):
 students_mark = {}
 students = ["Ali", "Bala", "Cindy"]
 marks = [55, 80, 62]
-for students, marks in students_mark.items:
-    students_mark[students] = marks
+for i in range(len(students)):
+    students_mark[students[i]] = marks[i]
 print(students_mark)
 
 
@@ -77,7 +77,14 @@ print(students_mark)
 
 # Exercise 5: Length Check
 # Keep asking user for a username until it has at least 5 characters.
-
+while True:
+    username = input("Enter a username:")
+    if len(username) > 5:
+        break 
+    elif username == "" or username == " ":
+        username = input("Enter a username:")
+    else:
+        username = input("Enter a username:")
 
 
 
