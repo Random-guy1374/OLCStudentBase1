@@ -7,10 +7,17 @@
 
 # Call the function with a list of names.
 # greet_users(["Alice", "Bob", "Charlie"])
-def greet_users():
-    return 
 
+def greet_users(das_input):
+    name_list = das_input
+    greet_list = [", Welcome to the event!", ", Glad to have you here!",", Thanks for joining us!"]
+    print(name_list[0],greet_list[0])
+    print(name_list[1],greet_list[1])
+    print(name_list[2],greet_list[2])
+    return None
 
+greet_users(["Alice", "Bob", "Charlie"])
+print(greet_users)
 
 
 #------------------------------------------------------------
@@ -24,6 +31,7 @@ def greet_users():
 # print(calculator(10, 5, "-"))
 # print(calculator(10, 5, "*"))
 # print(calculator(10, 5, "/"))
+
 def calculator(the_input):
     final = 0
     number_list = the_input.split(",")
