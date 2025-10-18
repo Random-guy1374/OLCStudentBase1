@@ -399,19 +399,21 @@ print("\n")
 # Treat uppercase and lowercase as the same.
 # Data:
 # line = "Better code, better life"
-# Example (order may vary): {'b':2, 'e':6, 't':5, 'r':3, 'c':1, 'o':1, 'd':1, 'l':1, 'i':1, 'f':1}
+# Example (order may vary): {'b':2, 'e':6, 't':4, 'r':2, 'c':1, 'o':1, 'd':1, 'l':1, 'i':1, 'f':1}
 
 
 print("Exercise 22")
 letter_dict = {}
-line = input("Enter: ")
+line = "Better code, better life"
+line = line.lower()
+# line = input("Enter: ").lower()
 for char2 in line:
-    count1 = 1
-    for index8 in range(len(line)):
-        if (char2.lower() not in letter_dict) and char2.isalpha() == True:
-            letter_dict[char2.lower()] = count1
-        if char2.lower() in letter_dict: 
-            letter_dict[char2.lower()] = count1+1
+    print(char2)
+    if (char2 not in letter_dict) and char2.isalpha() == True:
+        letter_dict[char2] = 0
+    if char2.lower() in letter_dict: 
+        letter_dict[char2] += 1
+    
 print(letter_dict)
 print("\n")
 
@@ -431,6 +433,21 @@ print("\n")
 # TAC
 # GCT
 # TGA
+
+print("Exercise 23")
+letter_dict = {}
+# line = "Better code, better life"
+# line = line.lower()
+line = input("Enter: ").lower()
+for char2 in line:
+    print(char2)
+    if (char2 not in letter_dict) and char2.isalpha() == True:
+        letter_dict[char2] = 0
+    if char2.lower() in letter_dict: 
+        letter_dict[char2] += 1
+    
+print(letter_dict)
+print("\n")
 
 
 
