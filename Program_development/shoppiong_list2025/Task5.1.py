@@ -28,7 +28,7 @@ def discount(cost):
 # 40.87 // 1
 #task5.3
 def reward_points(discount_total):
-    points = (discount_total//1)/3
+    points = (discount_total//1)*3
     return points
 
 #task 5.4
