@@ -19,13 +19,7 @@ def discount(cost):
     else:
         return cost_after_dis
 
-# paid = discount(cost)
-# print(paid)
 
-# import math
-# math.floor(40.87) # 40
-
-# 40.87 // 1
 #task5.3
 def reward_points(discount_total):
     points = (discount_total//1)*3
