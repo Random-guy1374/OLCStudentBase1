@@ -14,7 +14,7 @@ while True:
             locker = int(input("Number of the locker is not found.\nPlease enter the locker you would like to open: "))
         else:
             break
-
+    #5)
     pin = int(input("Please enter the PIN for the locker: "))
     while True:
         if len(str(pin)) != 4:
