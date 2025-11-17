@@ -44,6 +44,7 @@ check(user_word)
 guess = 2
 while True:
     if guess == 7:
+        print("Sorry you run out of guesses the word is",secret_word)
         break
     if user_word.upper() != secret_word.upper():
         user_word = input(f"(Guess{guess})Enter a 5-letter word: ")
@@ -56,12 +57,13 @@ while True:
             list2 += letter.upper()
 
         IstCount = [0, 0, 0, 0, 0]
-        for letter in range(len(list1)):
-            if list1[letter] in list2:
+        position = [1, 2, 3, 4, 5]
+        for letter in range(len(list2)):
+            if list2[letter] in list1:
                 IstCount[letter] = "?"
-            if list1[letter] == list2[letter]:
+            if list2[letter] == list1[letter]:
                 IstCount[letter] = list1[letter]
-            if list1[letter] not in list2:
+            if list2[letter] not in list1:
                 IstCount[letter] = "#"
                     
         print(IstCount)
