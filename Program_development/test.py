@@ -1,3 +1,5 @@
-word = "hello"
-print(word[:3])
-print(10%3)
+a = "password"
+b = []
+for x in a:
+    b.append(x)
+print(b)
