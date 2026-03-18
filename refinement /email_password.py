@@ -24,9 +24,9 @@ while True:
     password = input("Enter a password")
     if len(password) != 8:
         print("Password must contain exactly 8 characters")
-    elif password == :
-        print("Password must contain a uppercase letter")
-    elif password ==:
-        print("Password must contain a lowercase letter")
+    # elif password.islower() == True:
+    #     print("Password must contain a uppercase letter")
+    # elif password.isupper() == True:
+    #     print("Password must contain a lowercase letter")
     else:
         break
