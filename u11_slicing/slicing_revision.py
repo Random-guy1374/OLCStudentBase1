@@ -1,61 +1,17 @@
-###########################################################
-# Part 2. IN-CLASS Practice Exercises
-
-# Exercise 7: Extracting Middle Elements from a List
-# Scenario: Extract the middle 3 elements from a list with an odd 
-# number of elements.
-
-
-# numbers = [10, 20, 30, 40, 50, 60, 70]
-
-# print(numbers[2:5])
-
-
-
-#------------------------------------------------------------
-
-# Exercise 8: Checking Palindrome in a String
-# Scenario: Determine if a string is a palindrome (reads the same 
-# backward as forward).
-
-word = input("Enter a word: ")
-if word[::-1] == word:
-    print(word,"is a palindrome")
-else:
-    print(word,"is not a palindrome")
-
-
-
-
-#------------------------------------------------------------
-
-# Exercise 9: Reversing Words in a Sentence
-# Scenario: Reverse the words in a sentence manually.
-sentence = "Python is fun to learn."
-
-
-
-
-
-
-
-
 # String and List Operators
 # Using + to Concatenate
 # List Slicing
+
 '''
-Question 1: Extract a portion of a list.
-Write a function that takes a list and returns a new list 
+Question 1: Extract a portion of a list and creates a new list
 that contains only the first three elements of the original list.
 Example Input: [1, 2, 3, 4, 5]
 Example Output: [1, 2, 3]
 '''
 ## Write and test your code here
-def slice1(inlist):
-    return inlist[:3] # from start, up to 3 but not including 3
-
-newlist = slice1([1,2,3,4,5])
-print(newlist) # returns [1,2,3]
+# inlist = [1, 2, 3, 4, 5]
+# newlist = inlist[:3] # from start, up to 3 but not including 3
+# print(newlist) # returns [1,2,3]
 
 '''
 Question 2: Get the last three items of a list.
@@ -64,27 +20,21 @@ Example Input: [10, 20, 30, 40, 50]
 Example Output: [30, 40, 50]
 '''
 ## Write and test your code here
-def slice2(inlist):
-    return inlist[-3:] # from last 3rd, to the end
-
-newlist2 = slice2([1,2,3,4,5])
-print(newlist2) # returns [3,4,5]
+# inlist = [1, 2, 3, 4, 5]
+# newlist = inlist[-3:] # from last 3rd, to the end
+# print(newlist) # returns [3,4,5]
 
 '''
 Question 3: Create a sub-list from a list using slicing.
-Given a list of elements, write a function that returns a 
+Given a list of elements, write a function that returns a
 sublist from the second element to the second last element.
 Example Input: [0, 1, 2, 3, 4, 5]
 Example Output: [1, 2, 3, 4]
 '''
 ## Write and test your code here
-
-def slice3(inlist):
-    return inlist[1:-1] # rom the second element to the second last element
-
-newlist3 = slice3([1,2,3,4,5])
-print(newlist3) # returns [2,3,4]
-
+# inlist = [1, 2, 3, 4, 5]
+# newlist = inlist[1:-1] # from the second element to the second last element
+# print(newlist) # returns [2,3,4]
 
 '''
 Question 4: Reverse a list using slicing.
@@ -93,12 +43,9 @@ Example Input: [1, 2, 3, 4, 5]
 Example Output: [5, 4, 3, 2, 1]
 '''
 ## Write and test your code here
-def slice4(inlist):
-    return inlist[::-1] # # reverse it
-
-newlist4 = slice4([1,2,3,4,5])
-print(newlist4) # returns [5,4,3,2,1]
-
+# inlist = [1, 2, 3, 4, 5]
+# newlist = inlist[::-1] # reverse it
+# print(newlist) # returns [5,4,3,2,1]
 
 '''
 Question 5: Slice a list into halves.
@@ -108,16 +55,13 @@ Example Input: [1, 2, 3, 4, 5, 6]
 Example Output: [1, 2, 3]  [4, 5, 6]
 '''
 ## Write and test your code here
-def slice5(inlist):
-    listlen = len(inlist) # find length of list
-    midindex = listlen //2 # find the middle index / position
-    return inlist[:midindex], inlist[midindex:]
-
-# notice in this case, there are 2 return values (which is ok)
-newlist5,newlist6 = slice5([1,2,3,4,5,6]) 
-print(newlist5) # returns [1, 2, 3]  
-print(newlist6) # returns [4, 5, 6]
-
+# inlist = [1, 2, 3, 4, 5, 6]
+# listlen = len(inlist) # find length of list
+# midindex = listlen // 2 # find the middle index / position
+# first_half = inlist[:midindex]
+# second_half = inlist[midindex:]
+# print(first_half) # returns [1, 2, 3]
+# print(second_half) # returns [4, 5, 6]
 
 '''
 Question 6: Extract every second element from a list.
@@ -126,47 +70,36 @@ Example Input: ['a', 'b', 'c', 'd', 'e', 'f']
 Example Output: ['b', 'd', 'f']
 '''
 ## Write and test your code here
-def slice6(inlist):
-    return inlist[1::2] # start from 1 (2nd place, to end, increments of 2)
-
-newlist6 = slice6([1,2,3,4,5,6]) 
-print(newlist6) # returns [2,4,6]  
-
-
-
+# inlist = [1, 2, 3, 4, 5, 6]
+# newlist = inlist[1::2] # start from 1 (2nd place, to end, increments of 2)
+# print(newlist) # returns [2,4,6]
 
 '''
 Question 7: Remove the first and last elements of a list using slicing.
-Create a function that takes a list and returns it without 
+Create a function that takes a list and returns it without
 the first and last elements.
 Example Input: [0, 1, 2, 3, 4]
 Example Output: [1, 2, 3]
 '''
 ## Write and test your code here
-def slice7(inlist):
-    return inlist[1:-1] 
-
-newlist7 = slice7([1,2,3,4,5,6]) 
-print(newlist7) # returns [2, 3, 4, 5]  
-
+# inlist = [1, 2, 3, 4, 5, 6]
+# newlist = inlist[1:-1]
+# print(newlist) # returns [2, 3, 4, 5]
 
 '''
-Question 8: Create a function to reverse the order of elements in a 
+Question 8: Create code to reverse the order of elements in a
 list only from the second to the last but one.
 Example Input: [1, 2, 3, 4, 5, 6]
 Example Output: [1, 5, 4, 3, 2, 6]
 '''
 ## Write and test your code here
-def slice8(inlist):
-    second_to_last = inlist[1:-1] # get 2nd to last
-    reversed = second_to_last[::-1] # reverse 2nd to last
-    liststart = [inlist[0]] # retrieves 1st char and converts to list
-    listend = [inlist[-1]] # retrieve last char and convert to list
-    return  liststart + reversed + listend
-
-newlist8 = slice8([1,2,3,4,5,6]) 
-print(newlist8) # returns [1, 5, 4, 3, 2, 6]
-
+# inlist = [1, 2, 3, 4, 5, 6]
+# second_to_last = inlist[1:-1] # get 2nd to last
+# reversed_middle = second_to_last[::-1] # reverse 2nd to last
+# liststart = [inlist[0]] # retrieves 1st char and converts to list
+# listend = [inlist[-1]] # retrieve last char and convert to list
+# newlist = liststart + reversed_middle + listend
+# print(newlist) # returns [1, 5, 4, 3, 2, 6]
 
 
 '''
@@ -175,9 +108,8 @@ print(newlist8) # returns [1, 5, 4, 3, 2, 6]
 # Test case 2: example input: Python, example output: Pyt
 '''
 ## Write and test your code here
-
-
-    
+# word = input()
+# print(word[:3])
 
 '''
 # Question 10: Extract the last three characters from a string
@@ -185,31 +117,29 @@ print(newlist8) # returns [1, 5, 4, 3, 2, 6]
 # Test case 2: example input: Python, example output: hon
 '''
 ## Write and test your code here
-
-    
-
+# word = input()
+# print(word[-3:])
 
 '''
 # Question 11: Extract a subset of a list from index 2 to 5
 # Test case 1: example input: 1 2 3 4 5 6 7, 
 example output: [3, 4, 5, 6]
 # Test case 2: example input: 10 20 30 40 50 60, 
-example output: [30, 40, 50]
+example output: [30, 40, 50, 60]
 '''
 ## Write and test your code here
-
-    
-
-
+# list_1 = list(map(int, input().split()))
+# print(list_1[2:6])
 '''
 # Question 12: Extract every second character from a string
 # Test case 1: example input: hello, example output: hlo
 # Test case 2: example input: Python, example output: Pto
 '''
 ## Write and test your code here
-    
 
-
+# word = input()
+# new_word = word[::2]
+# print(new_word)
 
 '''
 # Question 13: 
@@ -220,8 +150,18 @@ example output: [30, 40, 50]
 # Test case 2: example input: helloworld, example output: Invalid, Even length
 '''
 ## Write and test your code here
-
+# def mid3(instring):
+#     l = len(instring)
+#     if l%2 == 1:
+#         a = int((l-1)/2)
+#         b = instring[a-1:a+2]
+#         return b
+#     elif l%2 == 0:
+#         message = "Invalid, Even length"
+#         return message
+# print(mid3("hello"))
     
+
 
 
 '''
@@ -230,20 +170,27 @@ example output: [30, 40, 50]
 # Test case 2: example input: Python, example output: Pyt
 '''
 ## Write and test your code here
-
-    
-
-
+# n = input()
+# l = len(n)
+# if l%2 == 0:
+#     a = int((l)/2)
+# elif l%2 == 1:
+#     a = int((l+1)/2)
+# print(n[:a])
 '''
 # Question 15: Extract the second half of a string
 # Test case 1: example input: hello, example output: llo
 # Test case 2: example input: Python, example output: hon
 '''
 ## Write and test your code here
-#------------------------------------------------------
 
-
-    
+# n = input()
+# l = len(n)
+# if l%2 == 0:
+#     a = int(l/2)
+# elif l%2 == 1:
+#     a = int((l-1)/2)
+# print(n[a:])
 
 '''
 Question 16:
@@ -254,11 +201,20 @@ Your function must handle an even/ odd number length of characters
 Example Input: "SINGING" Example Output: SIN, ING
 Example Input: "FLYING" Example Output: FLY, ING
 '''
-#------------------------------------------------------
+## Write and test your code here
 
+"cheese" "che" "ese"
 
+def ssplit(word):
+    list1 = []
+    length = len(word)
+    if length%2 == 0:
+        half = int(length/2)
+        list1.append(word[:half])
+        list1.append(word[half:])
+    elif length%2 == 1:
+        half = int((length+1)/2)
     
-
 '''
 # Challenge 1:
 Write a function `validate_nric(nric: str) -> bool` to 
@@ -273,8 +229,7 @@ Normal Test: Input: "S1234567D", Output: True
 Error Test: Input: "A1234567D", Output: False
 Boundary Test: Input: "S123456", Output: False
 '''
-#------------------------------------------------------
-
+## Write and test your code here
 
     
 
@@ -290,7 +245,7 @@ Error Test: Input: "johnDoe", Output: False
 Error Test: Input: "John Doe", Output: False
 Boundary Test: Input: "John", Output: False
 '''
-#------------------------------------------------------
+## Write and test your code here
 
 
     
@@ -306,7 +261,7 @@ Normal Test: Input: "SAB1234Z", Output: True
 Error Test: Input: "SA1234Z", Output: False
 Boundary Test: Input: "SAB123Z", Output: False
 '''
-#------------------------------------------------------
+## Write and test your code here
 
 
     
@@ -321,10 +276,10 @@ Normal Test: Input: "123456", Output: True
 Error Test: Input: "823456", Output: False
 Boundary Test: Input: "12345", Output: False
 '''
-#------------------------------------------------------
+## Write and test your code here
 
 
-    
+
 
 '''
 # Challenge 5:
@@ -339,7 +294,8 @@ Normal Test: Input: "29/02/2020", Output: True
 Error Test: Input: "32/13/2020", Output: False
 Boundary Test: Input: "01/01/0001", Output: True
 '''
-#------------------------------------------------------
+## Write and test your code here
+
 
 
     
@@ -363,16 +319,16 @@ The next multiple of 10 is 60 (*hint: nextnum = math.ceil(num/10) * 10)
 So, check digit = 60 - 59 = 1
 
 (a) The The program code function calculate() takes a 
-    12-digit number as a parameter. It calculates the 
-    check digit and returns the check digit.
+12-digit number as a parameter. It calculates the 
+check digit and returns the check digit.
 
-    Write the code for the function calculate [6]
+Write the code for the function calculate [6]
 
 (b) The main program:
 •	Takes as input a 12-digit number until a valid 
-    12-digit integer is entered
+12-digit integer is entered
 •	Calls the function calculate() with the valid input 
-    as a parameter
+as a parameter
 •	Outputs the number with the check digit as its 13th digit
 
 Write the code for the main program. [5]
@@ -382,7 +338,7 @@ Test that:
 123456789012 = 0
 135792468013 = 5
 '''
-#------------------------------------------------------
+## Write and test your code here
 
 
     
@@ -393,29 +349,29 @@ A developer needs to extract specific characters from a
 given string to generate a user ID.
 
 (a) Write a function generate_user_id(name, birthdate) 
-    that takes a user's full name as a single string in the 
-    format "First Last" and a birthdate in the format "YYYYMMDD". 
-    The function should return a user ID consisting of:
+that takes a user's full name as a single string in the 
+format "First Last" and a birthdate in the format "YYYYMMDD". 
+The function should return a user ID consisting of:
 
-    - The first three letters of the last name (in uppercase),
-    - The last two digits of the year of birth,
-    - The first letter of the first name (in lowercase).
+- The first three letters of the last name (in uppercase),
+- The last two digits of the year of birth,
+- The first letter of the first name (in lowercase).
 For example:
 generate_user_id("John Doe", "19901225") should return DOE90j.
 [6 marks]
 
 (b) Write a main program that:
 
-    - Takes as input a full name and birthdate,
-    - Calls the generate_user_id() function,
-    - Outputs the generated user ID.
+- Takes as input a full name and birthdate,
+- Calls the generate_user_id() function,
+- Outputs the generated user ID.
 Test cases:
 
 generate_user_id("Alice Tan", "20030515") should return TAN03a.
 generate_user_id("Michael Johnson", "19850911") should return JOH85m.
 [4 marks]
 '''
-#------------------------------------------------------
+## Write and test your code here
 
 
     
@@ -427,13 +383,13 @@ using the Luhn algorithm.
 
 Task 1: Implementing the Luhn Algorithm
 (a) Write a function is_valid_credit_card(card_number) that takes 
-    a credit card number as a string and checks if it is valid according 
-    to the Luhn algorithm. The function should:
+a credit card number as a string and checks if it is valid according 
+to the Luhn algorithm. The function should:
 
-    - Start from the rightmost digit (check digit) and move left.
-    - Double every second digit. If the doubling results in a number greater 
-      than 9, subtract 9 from it.
-    - Sum all the digits (including those not doubled).
+- Start from the rightmost digit (check digit) and move left.
+- Double every second digit. If the doubling results in a number greater 
+    than 9, subtract 9 from it.
+- Sum all the digits (including those not doubled).
 
 If the total sum is divisible by 10, return True 
 (indicating the card number is valid); otherwise, return False.
@@ -455,3 +411,4 @@ and determine if they are valid:
 1234567812345678
 Write the expected output for each test case.
 '''
+## Write and test your code here
