@@ -386,9 +386,25 @@ print(result)
 # Displays appropriate messages for invalid input. You may assume the input is always a string.
 # ________________________________________
 
-def validate_date():
-
-
+def validate_date(date_str):
+    if "-" not in date_str:
+        print("Invalid input ,input must contain a dash(-) ")
+        return False
+    elif len(date_str) != 5:
+        print("Invalid input ,both the day (DD) and month (MM) must be two characters long")
+        return False
+    elif date_str[:2].isdigit() == False or date_str[3:].isdigit() == False:
+        print("Invalid input ,both the day (DD) and month (MM) must be a number")
+        return False
+    elif int(date_str[:2]) < 1 or int(date_str[:2]) > 30:
+        print("Invalid Input, date must be between 1 and 30 ")
+        return False
+    elif int(date_str[3:]) < 1 or int(date_str[3:]) > 12:
+        print("Invalid Input, month must be between 1 and 12 ")
+        return False
+    else:
+        return True
+    
 
 
 
@@ -428,3 +444,20 @@ def validate_date():
 #     If the number of days is 0, then the item expires today. 
         #    Output “Item will expire today!”
 # ________________________________________
+
+check1,check2 = False, False
+while check1 == False:
+    today_date = input("Enter today's date: ")
+    check1 = validate_date(today_date)
+
+while check2 == False:
+    expiry_date = input("Enter expiry's date: ")
+    check2 = validate_date(expiry_date)
+
+total_dif = days_difference(today_date,expiry_date)
+if total_dif > 0:
+    print("Item is fresh and will expire in days.")
+elif total_dif == 0:
+    print("Item will expire today!")
+elif total_dif < 0:
+    print("Item has expired days ago.")
