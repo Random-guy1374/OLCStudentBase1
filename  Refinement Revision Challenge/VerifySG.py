@@ -8,7 +8,8 @@
 
 ID = ""
 count = 0
-for i in range(5):
+num = int(input("How many IDs do you want to enter?: "))
+for i in range(num):
     while True:
         ID = input("Enter ID: ")
         if len(ID) != 9:
