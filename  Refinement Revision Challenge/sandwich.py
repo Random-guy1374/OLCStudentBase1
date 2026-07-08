@@ -1,0 +1,148 @@
+# toppings = ['ham', 'cheese', 'lettuce', 'tomatoes']
+# top_cost = [1, 0.8, 0.5, 0.5]
+# print("Welcome to All-Health Salad Bar!")
+# print("Please select your toppings below.")
+# ham = int(input("Quantity of ham: "))
+# cheese = int(input("Quantity of cheese: "))
+# lettuce = int(input("Quantity of lettuce: "))
+# tomatoes = int(input("Quantity of tomatoes: "))
+# total_cost = ham*top_cost[0] + cheese*top_cost[1] + lettuce*top_cost[2] + tomatoes*top_cost[3]
+# print("Total cost: $", total_cost)
+
+
+##########################################################
+# Task 2.1 [3]
+
+# Capsicum, a new topping, is added to the list of toppings and 
+# will be priced at $0.80 per unit.
+
+# Edit the program so that the new topping is available for selection 
+#   and recalculate the cost. Cost is rounded to 1 decimal place.
+##########################################################
+
+# toppings = ['ham', 'cheese', 'lettuce', 'tomatoes','capsicum']
+# top_cost = [1, 0.8, 0.5, 0.5,0.8]
+# print("Welcome to All-Health Salad Bar!")
+# print("Please select your toppings below.")
+# ham = int(input("Quantity of ham: "))
+# cheese = int(input("Quantity of cheese: "))
+# lettuce = int(input("Quantity of lettuce: "))
+# tomatoes = int(input("Quantity of tomatoes: "))
+# capsicum = int(input("Quantity of capsicum: "))
+# total_cost = ham*top_cost[0] + cheese*top_cost[1] + lettuce*top_cost[2] + tomatoes*top_cost[3] + capsicum*top_cost[4]
+# print("Total cost: $", round(total_cost,1))
+
+
+
+
+
+
+
+
+
+##########################################################
+# Task 2.2 [2]
+
+# Each order should be at least $5.
+
+# Edit the program so that the user will be continually
+# prompted to re-order if the selection is less than $5.
+
+# Use appropriate input and output messages.
+##########################################################
+
+# toppings = ['ham', 'cheese', 'lettuce', 'tomatoes','capsicum']
+# top_cost = [1, 0.8, 0.5, 0.5,0.8]
+# total_cost = 0
+# print("Welcome to All-Health Salad Bar!")
+# while True:
+#     if total_cost >= 5:
+#         break
+#     else:
+#         print("Please select your toppings below.")
+#         ham = int(input("Quantity of ham: "))
+#         cheese = int(input("Quantity of cheese: "))
+#         lettuce = int(input("Quantity of lettuce: "))
+#         tomatoes = int(input("Quantity of tomatoes: "))
+#         capsicum = int(input("Quantity of capsicum: "))
+#         total_cost = ham*top_cost[0] + cheese*top_cost[1] + lettuce*top_cost[2] + tomatoes*top_cost[3] + capsicum*top_cost[4]
+
+# print("Total cost: $", round(total_cost,1))
+
+
+
+
+
+
+
+
+##########################################################
+# Task 2.3 [2]
+
+# Customers will get a free drink if the sandwich ordered costs more than $8.
+
+# Edit the program to inform eligible customers on the free drink.
+
+# Your program should inform the user with the following message: 
+# “You are entitled to a free drink.”
+##########################################################
+
+# toppings = ['ham', 'cheese', 'lettuce', 'tomatoes','capsicum']
+# top_cost = [1, 0.8, 0.5, 0.5,0.8]
+# total_cost = 0
+# print("Welcome to All-Health Salad Bar!")
+# while True:
+#     if total_cost >= 5:
+#         break
+#     else:
+#         print("Please select your toppings below.")
+#         ham = int(input("Quantity of ham: "))
+#         cheese = int(input("Quantity of cheese: "))
+#         lettuce = int(input("Quantity of lettuce: "))
+#         tomatoes = int(input("Quantity of tomatoes: "))
+#         capsicum = int(input("Quantity of capsicum: "))
+#         total_cost = ham*top_cost[0] + cheese*top_cost[1] + lettuce*top_cost[2] + tomatoes*top_cost[3] + capsicum*top_cost[4]
+
+# print("Total cost: $", round(total_cost,1))
+# if total_cost >= 8:
+#     print("You are entitled to a free drink.")
+
+
+
+
+
+##########################################################
+# Task 2.4 [3]
+
+# Each topping is given a health score as shown below:
+
+# Ham: -1 Cheese: -0.5 Lettuce: 3 Tomatoes: 2.5 Capsicum: 3.2
+
+# Edit the program to calculate the health score of the purchased sandwich.
+
+# Orders with a health score of more than 10 will be entitled to $1 discount.
+##########################################################
+
+
+toppings = ['ham', 'cheese', 'lettuce', 'tomatoes','capsicum']
+top_cost = [1, 0.8, 0.5, 0.5,0.8]
+health = [-1,-0.5,3,2.5,3.2]
+total_cost = 0
+print("Welcome to All-Health Salad Bar!")
+while True:
+    if total_cost >= 5:
+        break
+    else:
+        print("Please select your toppings below.")
+        ham = int(input("Quantity of ham: "))
+        cheese = int(input("Quantity of cheese: "))
+        lettuce = int(input("Quantity of lettuce: "))
+        tomatoes = int(input("Quantity of tomatoes: "))
+        capsicum = int(input("Quantity of capsicum: "))
+        total_cost = ham*top_cost[0] + cheese*top_cost[1] + lettuce*top_cost[2] + tomatoes*top_cost[3] + capsicum*top_cost[4]
+        total_point = ham*health[0] + cheese*health[1] + lettuce*health[2] + tomatoes*health[3] + capsicum*health[4]
+if total_point > 10:
+    total_cost -= 1
+print("Total cost: $", round(total_cost,1))
+if total_cost >= 8:
+    print("You are entitled to a free drink.")
