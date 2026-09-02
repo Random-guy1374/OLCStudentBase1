@@ -71,7 +71,7 @@ def displayFahrenToCelsius(start, end):
     print("Fahrenheit", "Celsius")
 
     for temp in range(start, end + 1):
-        converted_temp = (temp * 5/9) + 32 #14) change temp - 32 * 5/9  to temp * 5/9 + 32 #15) add ()
+        converted_temp = (temp - 32) * 5/9 #14) add ()
         print("{:4.1f}      {:4.1f}".format(temp, converted_temp)) #10) change temp to converted_temp
 
 def displayCelsiusToFahren(start, end):
