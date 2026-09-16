@@ -1,17 +1,17 @@
 students = {"Alice": 85, "Bob": 78, "Charlie": 92, "Diana": 88, "Eve": 76}
 pass_dict = {}
 fail_dict = {}
-total = 0
-for score in students.values():
-    total = total + score
-avg = total/len(students)
-print(avg)
-for name, grade in students.items():
-    if grade >= avg:
-        pass_dict[name] = grade
 
-    else:
-        fail_dict[name] = grade
-print("Passed:",pass_dict.keys())
-print("Failed:",fail_dict.keys())
+total = sum(students.values())
+pass_score = 80
+avg = float(total/len(students))
+below_avg = []
 
+for name, score in students.items():
+    if float(score) < avg:
+        below_avg.append(name)
+    if score < 80:
+        fail_dict[name] = score
+    elif score >= 80:
+        pass_dict[name] = score
+print(f"students who scored below average of {avg}: {below_avg}")
