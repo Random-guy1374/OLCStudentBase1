@@ -9,8 +9,7 @@ while True:
     else:
         print(f"{username} already existed")
 
-check = True
-while check:
+while True:
     check1 = False
 
     password = input("Please enter a password: ")
