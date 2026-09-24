@@ -356,15 +356,33 @@
 # Write your code below.
 # ---------------------------------------------------------
 
-with open("q9_scores.txt","r") as f:
-    content = f.readlines()
-print(content)
+# with open("q9_scores.txt","r") as f:
+#     content = f.read().split()
 
+# # print(content)
 
+# valid_list = []
+# invalid_list = []
+# for char in content:
+#     if char.isdigit():
+#         if int(char) >= 0 and int(char) <= 100:
+#             valid_list.append(char)
+#         else:
+#             invalid_list.append(char)
+#     else:
+#         invalid_list.append(char)
+        
 
+# print("Valid scores:",valid_list)
+# print("Invalid entries:",invalid_list)
 
+# with open("invalid_scores.txt","w") as f:
+#     for things in invalid_list:
+#         f.write(things)
+#         f.write("\n")
 
-
+# # with open("invalid_scores.txt","r") as f:
+# #     print(f.read())
 
 
 
@@ -405,6 +423,39 @@ print(content)
 # Books: 15
 # Write your code below.
 # ---------------------------------------------------------
+
+with open("q10_expenses.txt","r") as f:
+    content = f.read().split()
+# print(content)
+
+category_list,amount_list = [],[]
+
+for char in content:
+    category = char.split(",")[0]
+    amount = int(char.split(",")[1]) 
+    if category in category_list:
+        position = category_list.index(category)
+        amount_list[position] += amount
+    else:
+        category_list.append(category), amount_list.append(amount)
+
+
+# print("category",category_list)
+# print("amount",amount_list)
+
+with open("expense_report.txt","w") as f:
+    first_msg = "Total spending:"+ str(sum(amount_list))
+    f.write(first_msg)
+    for i in range(len(category_list)):
+        sec_msg = str(category_list[i]) + ": " + str(amount_list[i])
+        f.write(sec_msg)
+
+# print("Total spending:",sum(amount_list))
+# for i in range(len(category_list)):
+#     print(f"{category_list[i]}: {amount_list[i]}")
+
+with open("expense_report.txt","r") as f:
+    print(f.read())
 
 
 
