@@ -424,38 +424,39 @@
 # Write your code below.
 # ---------------------------------------------------------
 
-with open("q10_expenses.txt","r") as f:
-    content = f.read().split()
-# print(content)
+# with open("q10_expenses.txt","r") as f:
+#     content = f.read().split()
+# # print(content)
 
-category_list,amount_list = [],[]
+# category_list,amount_list = [],[]
 
-for char in content:
-    category = char.split(",")[0]
-    amount = int(char.split(",")[1]) 
-    if category in category_list:
-        position = category_list.index(category)
-        amount_list[position] += amount
-    else:
-        category_list.append(category), amount_list.append(amount)
+# for char in content:
+#     category = char.split(",")[0]
+#     amount = int(char.split(",")[1]) 
+#     if category in category_list:
+#         position = category_list.index(category)
+#         amount_list[position] += amount
+#     else:
+#         category_list.append(category), amount_list.append(amount)
 
 
-# print("category",category_list)
-# print("amount",amount_list)
+# # print("category",category_list)
+# # print("amount",amount_list)
 
-with open("expense_report.txt","w") as f:
-    first_msg = "Total spending:"+ str(sum(amount_list))
-    f.write(first_msg)
-    for i in range(len(category_list)):
-        sec_msg = str(category_list[i]) + ": " + str(amount_list[i])
-        f.write(sec_msg)
+# with open("expense_report.txt","w") as f:
+#     first_msg = "Total spending: "+ str(sum(amount_list))
+#     f.write(first_msg)
+#     for i in range(len(category_list)):
+#         sec_msg = "\n" + str(category_list[i]) + ": " + str(amount_list[i]) 
+#         f.write(sec_msg)
 
-# print("Total spending:",sum(amount_list))
-# for i in range(len(category_list)):
-#     print(f"{category_list[i]}: {amount_list[i]}")
+# # print("Total spending:",sum(amount_list))
+# # for i in range(len(category_list)):
+# #     print(f"{category_list[i]}: {amount_list[i]}")
 
-with open("expense_report.txt","r") as f:
-    print(f.read())
+# with open("expense_report.txt","r") as f:
+#     print(f.read())
+
 
 
 
@@ -500,10 +501,44 @@ with open("expense_report.txt","r") as f:
 # ---------------------------------------------------------
 
 
+# def read_sales():
+#     with open("q11_sales.txt","r") as f:
+#         content_list = f.read().split()
+#         final_list = []
+#         for char in content_list:
+#             content = []
+#             item, amount, price = char.split(",")[0], int(char.split(",")[1]), float(char.split(",")[2])
+
+#             content.append(item)
+#             content.append(amount)
+#             content.append(price)
+
+#             final_list.append(content)
+
+#     return final_list
+
+# result = read_sales()
+
+# print(result)
+
+
+
+#TESTING
+
+# with open("sales_report.txt","r") as f:
+#     print(f.read())
 
 
 
 
+# # print("item, amount, price",item,amount, price)
+# # print("item_list",item_list)
+# # print("cost_list",cost_list)
+
+# # print(item_list[cost_list.index(max(cost_list))])
+
+
+# [['Pen',12,1.5],['Book',5,4.8],['Eraser',20,0.6]]
 
 
 
@@ -520,14 +555,9 @@ with open("expense_report.txt","r") as f:
 # Write your code below.
 # ---------------------------------------------------------
 
-
-
-
-
-
-
-
-
+# def calculate_total(records):
+#     total = records[1] * records[2]
+#     return total
 
 
 
@@ -556,10 +586,32 @@ with open("expense_report.txt","r") as f:
 # Write your code below.
 # ---------------------------------------------------------
 
+# def write_report(records):
+#     item_list,cost_list = [], []
+
+#     for things in result:
+#         item = things[0]
+
+#         if item not in item_list:
+#             total_cost = calculate_total(things)
+#             item_list.append(item)
+#             cost_list.append(total_cost)    
+
+#     with open("sales_report.txt","w") as f:
+#         for i in range(len(item_list)):
+#             msg = str(item_list[i]) + ": " + str(cost_list[i]) + "\n"
+#             f.write(msg)
+#         msg2 = "The grand total value of all items is " + str(sum(cost_list))
+
+#         f.write(msg2)
+#         msg3 = "\nBest Selling Item: "+ str(item_list[cost_list.index(max(cost_list))])
+#         f.write(msg3)
+
+# write_report(result)
 
 
-
-
+# with open("sales_report.txt","r") as f:
+#     print(f.read())
 
 
 
@@ -579,3 +631,52 @@ with open("expense_report.txt","r") as f:
 #
 # Write your code below.
 # ---------------------------------------------------------
+
+def read_sales():
+    with open("q11_sales.txt","r") as f:
+        content_list = f.read().split()
+        final_list = []
+        for char in content_list:
+            content = []
+            item, amount, price = char.split(",")[0], int(char.split(",")[1]), float(char.split(",")[2])
+
+            content.append(item)
+            content.append(amount)
+            content.append(price)
+
+            final_list.append(content)
+
+    return final_list
+
+result = read_sales()
+
+def calculate_total(records):
+    total = records[1] * records[2]
+    return total
+
+
+def write_report(records):
+    item_list,cost_list = [], []
+
+    for things in result:
+        item = things[0]
+
+        if item not in item_list:
+            total_cost = calculate_total(things)
+            item_list.append(item)
+            cost_list.append(total_cost)    
+
+    with open("sales_report.txt","w") as f:
+        for i in range(len(item_list)):
+            msg = str(item_list[i]) + ": " + str(cost_list[i]) + "\n"
+            f.write(msg)
+        msg2 = "The grand total value of all items is " + str(sum(cost_list))
+
+        f.write(msg2)
+        msg3 = "\nBest Selling Item: "+ str(item_list[cost_list.index(max(cost_list))])
+        f.write(msg3)
+
+write_report(result)
+
+# with open("sales_report.txt","r") as f:
+#     print(f.read())
